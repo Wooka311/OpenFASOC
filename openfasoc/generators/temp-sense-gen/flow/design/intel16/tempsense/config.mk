@@ -1,26 +1,35 @@
 export DESIGN_NICKNAME = tempsense
 export DESIGN_NAME = tempsenseInst_error
 
-export PLATFORM    = sky130hd
+export PLATFORM    = intel16
 
 export VERILOG_FILES 		= $(sort $(wildcard ./design/src/$(DESIGN_NICKNAME)/*.v)) \
 			  	  ../blocks/$(PLATFORM)/tempsenseInst.blackbox.v
 export SDC_FILE    		= ./design/$(PLATFORM)/$(DESIGN_NICKNAME)/constraint.sdc
 
-export DIE_AREA   	 	= 0 0 155.48 146.88
-export CORE_AREA   		= 18.4 16.32 137.08 130.56
+#export DIE_AREA   	 	= 0 0 37.104 37.5
+#export CORE_AREA   		= 3 3 34.104 34.5
+#export DIE_AREA   	 	= 0 0 161.52 163.5
+#export CORE_AREA   		= 3 3 158.52 160.5
+export DIE_AREA   	 	= 0 0 40.992 41.28
+export CORE_AREA   		= 3 3 37.992 38.28
 
 # area of the smaller voltage domain
-export VD1_AREA                 = 33.58 32.64 64.86 62.56
+#export VD1_AREA                 = 4.404 4.89 17.148 16.86
+#export VD1_AREA                 = 4.404 4.89 79.356 79.86 
+export VD1_AREA                 = 4.404 4.89 19.092 18.75 
 
 # power delivery network config file
 export PDN_TCL 			= ../blocks/$(PLATFORM)/pdn.tcl
 
-export ADDITIONAL_LEFS  	= ../blocks/$(PLATFORM)/lef/HEADER.lef \
+export ADDITIONAL_LEFS  	+= ../blocks/$(PLATFORM)/lef/HEADER.lef \
                         	  ../blocks/$(PLATFORM)/lef/SLC.lef
 
-export ADDITIONAL_GDS_FILES 	= ../blocks/$(PLATFORM)/gds/HEADER.gds \
+export ADDITIONAL_GDS 	 	= ../blocks/$(PLATFORM)/gds/HEADER.gds \
 			      	  ../blocks/$(PLATFORM)/gds/SLC.gds
+
+export ADDITIONAL_CDL           = ../blocks/$(PLATFORM)/cdl/HEADER.cdl \
+                                  ../blocks/$(PLATFORM)/cdl/SLC.cdl
 
 # informs what cells should be placed in the smaller voltage domain
 export DOMAIN_INSTS_LIST 	= ../blocks/$(PLATFORM)/tempsenseInst_domain_insts.txt

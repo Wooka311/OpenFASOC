@@ -1,4 +1,4 @@
-DESIGN_CONFIG ?= ./design/sky130hd/tempsense/config.mk
+DESIGN_CONFIG ?= ./design/intel16/tempsense/config.mk
 
 # If we are running headless use offscreen rendering for save_image
 ifndef DISPLAY
