@@ -1,0 +1,6 @@
+*********
+
+.SUBCKT headerA vcc VIN vssx 
+Mqn1 net4 VIN VIN vssx nulvt L=0.04u W=0.72u
+Mqn2 vcc VIN net4 vssx nulvt L=0.04u W=0.72u
+.ENDS

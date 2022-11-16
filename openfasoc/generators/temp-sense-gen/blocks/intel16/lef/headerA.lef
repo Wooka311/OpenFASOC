@@ -1,0 +1,81 @@
+VERSION 5.7 ;
+BUSBITCHARS "[]" ;
+DIVIDERCHAR "/" ;
+
+PROPERTYDEFINITIONS
+  MACRO CatenaDesignType STRING ;
+END PROPERTYDEFINITIONS
+
+MACRO headerA
+  CLASS CORE ;
+  ORIGIN 0 0 ;
+  FOREIGN headerA 0 0 ;
+  SIZE 1.512 BY 0.63 ;
+  SYMMETRY X Y ;
+  SITE CoreSite ;
+  PIN vssx
+    DIRECTION INOUT ;
+    USE GROUND ;
+    SHAPE ABUTMENT ;
+    PORT
+      LAYER m1 ;
+        RECT -0.034 -0.022 1.546 0.022 ;
+    END
+  END vssx
+  PIN vcc
+    DIRECTION INOUT ;
+    USE POWER ;
+    SHAPE ABUTMENT ;
+    PORT
+      LAYER m1 ;
+        RECT -0.034 0.608 1.546 0.652 ;
+        RECT 0.938 0.518 1.006 0.652 ;
+        RECT 0.722 0.518 0.79 0.652 ;
+        RECT 0.506 0.518 0.574 0.652 ;
+    END
+  END vcc
+  PIN VIN
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER m1 ;
+        RECT 0.938 0.068 1.006 0.382 ;
+        RECT 0.722 0.068 0.79 0.382 ;
+        RECT 0.506 0.068 0.574 0.382 ;
+      LAYER m2 ;
+        RECT 0.488 0.097 1.024 0.141 ;
+        RECT 0.488 0.293 1.024 0.337 ;
+      LAYER m3 ;
+        RECT 0.944 0.069 1 0.365 ;
+        RECT 0.728 0.069 0.784 0.365 ;
+        RECT 0.512 0.069 0.568 0.365 ;
+      LAYER v2 ;
+        RECT 0.512 0.286 0.568 0.344 ;
+        RECT 0.512 0.09 0.568 0.148 ;
+        RECT 0.728 0.286 0.784 0.344 ;
+        RECT 0.728 0.09 0.784 0.148 ;
+        RECT 0.944 0.286 1 0.344 ;
+        RECT 0.944 0.09 1 0.148 ;
+      LAYER v1 ;
+        RECT 0.51 0.293 0.57 0.337 ;
+        RECT 0.51 0.097 0.57 0.141 ;
+        RECT 0.726 0.293 0.786 0.337 ;
+        RECT 0.726 0.097 0.786 0.141 ;
+        RECT 0.942 0.293 1.002 0.337 ;
+        RECT 0.942 0.097 1.002 0.141 ;
+    END
+  END VIN
+  OBS
+    LAYER m1 ;
+      RECT 0.83 0.158 0.898 0.562 ;
+      RECT 0.614 0.158 0.682 0.562 ;
+    LAYER v1 ;
+      RECT 0.834 0.408 0.894 0.452 ;
+      RECT 0.618 0.408 0.678 0.452 ;
+    LAYER m2 ;
+      RECT 0.596 0.408 0.916 0.452 ;
+  END
+  PROPERTY CatenaDesignType "deviceLevel" ;
+END headerA
+
+END LIBRARY
