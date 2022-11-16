@@ -1,14 +1,12 @@
-****
 
 .subckt SLC VIN VINB VOUT vssx vcc
-M2 vcc net07 net02 VPB php L=0.04u W=0.09u
-M7 net02 net03 net03 VPB pulvt L=0.04u W=0.09u
-M3 vcc  net03 net06 VPB php L=0.04u W=0.09u
-M8 net06 net07 net07 VPB pulvt L=0.04u W=0.09u
-M4 vcc net06 VOUT VPB php L=0.04u W=0.135u
-M0 vssx net07 VOUT VNB nhp L=0.04u W=0.09u
-M1 vssx net07 VOUT VNB nhp L=0.04u W=0.09u
-M5 vssx VINB net03 VNB nulvt L=0.04u W=0.135u
-M6 vssx VIN net07 VNB nulvt L=0.04u W=0.135u
+Mqp0 net02 net07 vcc vcc php L=0.04u W=0.09u
+Mqp1 net03 net03 net02 vcc pulvt L=0.04u W=0.09u
+Mqp3 net06 net03 vcc vcc php L=0.04u W=0.09u
+Mqp4 net07 net07 net06 vcc pulvt L=0.04u W=0.09u
+Mqp6 VOUT net06 vcc vcc php L=0.04u W=0.135u
+Mqn4 VOUT net07 vssx vssx nhp L=0.04u W=0.18u
+Mqn0 net03 VINB vssx vssx nulvt L=0.04u W=0.135u
+Mqn8 net07 VIN vssx vssx nulvt L=0.04u W=0.135u
 .ends
 
