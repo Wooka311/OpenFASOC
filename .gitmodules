@@ -8,3 +8,4 @@
 [submodule "openfasoc/common/platforms/intel16"]
 	path = openfasoc/common/platforms/intel16
 	url = git@github.com:ashbir/Intel16-Platform.git
+	branch = dev
