@@ -11,25 +11,25 @@ export SDC_FILE    		= ./design/$(PLATFORM)/$(DESIGN_NICKNAME)/constraint.sdc
 #export CORE_AREA   		= 3 3 34.104 34.5
 #export DIE_AREA   	 	= 0 0 161.52 163.5
 #export CORE_AREA   		= 3 3 158.52 160.5
-export DIE_AREA   	 	= 0 0 40.992 41.28
-export CORE_AREA   		= 3 3 37.992 38.28
+export DIE_AREA   	 	= 0 0 40.992 40.65
+export CORE_AREA   		= 3 3 37.992 37.65
 
 # area of the smaller voltage domain
 #export VD1_AREA                 = 4.404 4.89 17.148 16.86
 #export VD1_AREA                 = 4.404 4.89 79.356 79.86 
-export VD1_AREA                 = 4.404 4.89 19.092 18.75 
+export VD1_AREA                 = 4.404 5.52 19.092 18.27
 
 # power delivery network config file
 export PDN_TCL 			= ../blocks/$(PLATFORM)/pdn.tcl
 
-export ADDITIONAL_LEFS  	+= ../blocks/$(PLATFORM)/lef/HEADER.lef \
+export ADDITIONAL_LEFS  	+= ../blocks/$(PLATFORM)/lef/headerA.lef \
                         	  ../blocks/$(PLATFORM)/lef/SLC.lef
 
-export ADDITIONAL_GDS 	 	= ../blocks/$(PLATFORM)/gds/HEADER.gds \
-			      	  ../blocks/$(PLATFORM)/gds/SLC.gds
+export ADDITIONAL_GDS 	 	= ../blocks/$(PLATFORM)/gds/headerA.gds \
+					  ../blocks/$(PLATFORM)/gds/SLC.gds
 
-export ADDITIONAL_CDL           = ../blocks/$(PLATFORM)/cdl/HEADER.cdl \
-                                  ../blocks/$(PLATFORM)/cdl/SLC.cdl
+export ADDITIONAL_CDL           = ../blocks/$(PLATFORM)/cdl/headerA.cdl \
+								  ../blocks/$(PLATFORM)/cdl/SLC.cdl
 
 # informs what cells should be placed in the smaller voltage domain
 export DOMAIN_INSTS_LIST 	= ../blocks/$(PLATFORM)/tempsenseInst_domain_insts.txt
