@@ -46,22 +46,22 @@ MACRO SLC
         RECT 1.37 0.068 1.438 0.562 ;
     END
   END VOUT
-  PIN VINB
+  PIN INB
     DIRECTION INPUT ;
     USE ANALOG ;
     PORT
       LAYER m1 ;
         RECT 0.182 0.158 0.25 0.382 ;
     END
-  END VINB
-  PIN VIN
+  END INB
+  PIN IN
     DIRECTION INPUT ;
     USE ANALOG ;
     PORT
       LAYER m1 ;
         RECT 0.506 0.158 0.574 0.382 ;
     END
-  END VIN
+  END IN
   OBS
     LAYER m1 ;
       RECT 0.83 0.068 0.898 0.472 ;
