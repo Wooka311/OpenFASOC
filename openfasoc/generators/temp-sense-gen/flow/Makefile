@@ -550,9 +550,8 @@ GDS_FINAL_FILE = $(RESULTS_DIR)/6_final.$(STREAM_SYSTEM_EXT)
 finish: $(LOG_DIR)/6_report.log \
         $(RESULTS_DIR)/6_final.v \
         $(RESULTS_DIR)/6_final.sdc \
-	$(RESULTS_DIR)/6_final.cdl \
 	$(RESULTS_DIR)/6_final_concat.cdl \
-        $(GDS_FINAL_FILE)
+        $(RESULTS_DIR)/7_fill.gds
 # ==============================================================================
 
 ifneq ($(USE_FILL),)
@@ -625,10 +624,12 @@ else
 	echo "DRC not supported on this platform" > $@
 endif
 
-$(RESULTS_DIR)/6_final.cdl: $(RESULTS_DIR)/6_final.v
+$(RESULTS_DIR)/6_final_mod.cdl: $(RESULTS_DIR)/6_final.v
 	($(TIME_CMD) $(OPENROAD_CMD) $(SCRIPTS_DIR)/cdl.tcl) 2>&1 | tee $(LOG_DIR)/6_cdl.log
+	python $(UTILS_DIR)/openfasoc/cdl_parser.py -i $(RESULTS_DIR)/6_final.cdl -o $(RESULTS_DIR)/6_final_mod.cdl 
+	
 
-$(RESULTS_DIR)/6_final_concat.cdl: $(RESULTS_DIR)/6_final.cdl $(CDL_FILE)
+$(RESULTS_DIR)/6_final_concat.cdl: $(RESULTS_DIR)/6_final_mod.cdl $(CDL_FILE)
 	cat $^ > $@
 
 lvs: $(RESULTS_DIR)/6_lvs.lvsdb
@@ -666,7 +667,7 @@ endif
 	$(COMMON_VERIF_DIR)/run_lvspex.sh $(RESULTS_DIR)/6_final.gds $(DESIGN_NAME) $(REPORTS_DIR)/6_final_lvs.rpt
 
 clean_finish:
-	rm -rf $(RESULTS_DIR)/6_*.gds $(RESULTS_DIR)/6_*.oas $(RESULTS_DIR)/6_*.odb $(RESULTS_DIR)/6_*.v $(RESULTS_DIR)/6_*.sdc $(RESULTS_DIR)/6_*.spef $(RESULTS_DIR)/6_*.cdl $(RESULTS_DIR)/6_*.def
+	rm -rf $(RESULTS_DIR)/6_*.gds $(RESULTS_DIR)/6_*.oas $(RESULTS_DIR)/6_*.odb $(RESULTS_DIR)/6_*.v $(RESULTS_DIR)/6_*.sdc $(RESULTS_DIR)/6_*.spef $(RESULTS_DIR)/6_*.cdl $(RESULTS_DIR)/6_*.def $(RESULTS_DIR)/7_*.gds
 	rm -rf $(REPORTS_DIR)/6_*.rpt
 	rm -f  $(LOG_DIR)/6_*
 

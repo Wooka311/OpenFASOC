@@ -18,30 +18,10 @@ import sys
 
 parser = argparse.ArgumentParser(description="formulate input cdl netlist")
 parser.add_argument("--inputCdl", "-i", required=True, help="input CDL netlist")
-parser.add_argument("--stdCdl", "-s", required=True, help="standard cells CDL netlist")
 parser.add_argument("--powerConn", "-p", required=False, help="power connection")
 parser.add_argument("--outputCdl", "-o", required=True, help="output CDL netlist")
 
 args = parser.parse_args()
-
-with open(args.stdCdl, "r") as rf:
-    filedata = rf.read()
-
-std_pin_order_dict = {}  # map object, see notes in the for each loop below
-std_cells_re = re.findall(
-    "\.subckt (.*)", filedata
-)  # "\.subckt (.*)" means all lines where ".subckt " occurs. Breakdown below
-# The "\." is used to indicate "." without invoking special meaning, so look for ".subckt "
-# The "." matches any char !except newline!, the "*" make the resulting Reg Exp match repetitions of the preceding RE
-# () must be used with special chars. So basically (.*) means after the Reg Exp specified by "\.subckt ", match the rest of the line
-
-for std_cell in std_cells_re:
-    std_cell_info = std_cell.split(" ")
-    # std_cell example: "sky130_fd_sc_hd__a2111o_1 A1 A2 B1 C1 D1 VGND VNB VPB VPWR X"
-    std_pin_order_dict[std_cell_info[0]] = std_cell_info[1:]
-    # std_cell_info array example ['sky130_fd_sc_hd__a2111o_1', 'A1', 'A2', 'B1', 'C1', 'D1', 'VGND', 'VNB', 'VPB', 'VPWR', 'X']
-    # Example key:val std_pin_order_dict {'sky130_fd_sc_hd__a2111o_1': ['A1', 'A2', 'B1', 'C1', 'D1', 'VGND', 'VNB', 'VPB', 'VPWR', 'X']}
-
 
 # The input Cdl netlist (inputz/6_final.cdl). read that entire file into "filedata" i.e. overwrite filedata
 with open(args.inputCdl, "r") as rf:
@@ -77,9 +57,6 @@ with open(args.outputCdl, "w") as wf:
     ckt_end = ckt_re.group(5)
     ckt_cells = ckt_cells.replace("\n+", "").split("\n")
 
-    wf.write(
-        ".INCLUDE '" + os.path.abspath(args.stdCdl) + "'\n"
-    )  # .INCLUDE the standard cell spice file
     ckt_head = ckt_head.replace("\n+", "")  # to one line
     wf.write(ckt_head)  # proper top level heading
 
