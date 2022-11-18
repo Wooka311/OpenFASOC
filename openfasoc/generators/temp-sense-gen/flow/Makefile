@@ -666,6 +666,12 @@ clean_finish:
 	rm -rf $(REPORTS_DIR)/6_*.rpt
 	rm -f  $(LOG_DIR)/6_*
 
+$(RESULTS_DIR)/7_fill.gds: $(GDS_FINAL_FILE)
+	rm -rf fill && mkdir fill && cd fill && \
+	calibre -drc -hier -turbo -hyper $(Fill_RUNSET)/p1222_fill.svrf | tee fill.log
+	cp fill/$(DESIGN_NAME)_fill.gds $(RESULTS_DIR)/7_fill.gds
+
+
 
 # ==============================================================================
 #  __  __ ___ ____   ____
