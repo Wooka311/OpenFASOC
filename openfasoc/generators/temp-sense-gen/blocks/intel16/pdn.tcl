@@ -58,7 +58,7 @@ add_pdn_stripe -grid stdcell -layer m3 -width 0.044 -pitch 10.80 -offset 2.304
 #add_pdn_stripe -grid stdcell -layer m8 -width 0.18 -offset 10.0 -pitch 4.320 -extend_to_core_ring -starts_with GROUND
 #add_pdn_stripe -grid stdcell -layer m8 -width 0.18 -pitch 4.320 -extend_to_core_ring -starts_with GROUND -number_of_straps 4 -nets VSS
 
-add_pdn_connect -grid stdcell -layers {m1 m2} -dont_use_vias ".*_illegal"
+add_pdn_connect -grid stdcell -layers {m1 m2} -dont_use_vias ".*_illegal" -ongrid {m1}
 add_pdn_connect -grid stdcell -layers {m2 m3} -dont_use_vias ".*_illegal" 
 add_pdn_connect -grid stdcell -layers {m3 m4} -dont_use_vias ".*_illegal" 
 add_pdn_connect -grid stdcell -layers {m4 m5} -dont_use_vias ".*_illegal" 
@@ -78,7 +78,7 @@ add_pdn_stripe -grid stdcell_analog -layer m5 -width 0.044 -pitch 10.80 -offset 
 add_pdn_stripe -grid stdcell_analog -layer m4 -width 0.044 -pitch 10.80 -offset 3.240
 add_pdn_stripe -grid stdcell_analog -layer m3 -width 0.044 -pitch 10.80 -offset 2.304
 
-add_pdn_connect -grid stdcell_analog -layers {m1 m2} -dont_use_vias ".*_illegal"
+add_pdn_connect -grid stdcell_analog -layers {m1 m2} -dont_use_vias ".*_illegal" -ongrid {m1}
 add_pdn_connect -grid stdcell_analog -layers {m2 m3} -dont_use_vias ".*_illegal" 
 add_pdn_connect -grid stdcell_analog -layers {m3 m4} -dont_use_vias ".*_illegal" 
 add_pdn_connect -grid stdcell_analog -layers {m4 m5} -dont_use_vias ".*_illegal" 
