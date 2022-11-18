@@ -64,6 +64,9 @@ endif
 $(info [INFO][FLOW] Using platform directory $(PLATFORM_DIR))
 include $(PLATFORM_DIR)/config.mk
 
+$(info [INFO][FLOW] Using commercial tool)
+include calibre/calibre.mk
+
 export GALLERY_REPORT ?= 0
 # Enables hierarchical yosys
 export SYNTH_HIERARCHICAL ?= 0
@@ -548,6 +551,7 @@ finish: $(LOG_DIR)/6_report.log \
         $(RESULTS_DIR)/6_final.v \
         $(RESULTS_DIR)/6_final.sdc \
 	$(RESULTS_DIR)/6_final.cdl \
+	$(RESULTS_DIR)/6_final_concat.cdl \
         $(GDS_FINAL_FILE)
 # ==============================================================================
 
@@ -624,7 +628,7 @@ endif
 $(RESULTS_DIR)/6_final.cdl: $(RESULTS_DIR)/6_final.v
 	($(TIME_CMD) $(OPENROAD_CMD) $(SCRIPTS_DIR)/cdl.tcl) 2>&1 | tee $(LOG_DIR)/6_cdl.log
 
-$(OBJECTS_DIR)/6_final_concat.cdl: $(RESULTS_DIR)/6_final.cdl $(CDL_FILE)
+$(RESULTS_DIR)/6_final_concat.cdl: $(RESULTS_DIR)/6_final.cdl $(CDL_FILE)
 	cat $^ > $@
 
 lvs: $(RESULTS_DIR)/6_lvs.lvsdb
