@@ -17,13 +17,19 @@ export VD1_AREA                 = 4.428 4.41 11.556 9.45
 export PDN_TCL 			= ../blocks/$(PLATFORM)/pdn.tcl
 
 export ADDITIONAL_LEFS  	+= ../blocks/$(PLATFORM)/lef/headerA.lef \
-                        	  ../blocks/$(PLATFORM)/lef/SLC.lef
+                       	  	   ../blocks/$(PLATFORM)/lef/headerB.lef \
+                                   ../blocks/$(PLATFORM)/lef/headerC.lef \
+				   ../blocks/$(PLATFORM)/lef/SLC.lef
 
 export ADDITIONAL_GDS 	 	= ../blocks/$(PLATFORM)/gds/headerA.gds \
-					  ../blocks/$(PLATFORM)/gds/SLC.gds
+				  ../blocks/$(PLATFORM)/gds/headerB.gds	\
+				  ../blocks/$(PLATFORM)/gds/headerC.gds \
+				  ../blocks/$(PLATFORM)/gds/SLC.gds
 
 export ADDITIONAL_CDL           = ../blocks/$(PLATFORM)/cdl/headerA.cdl \
-								  ../blocks/$(PLATFORM)/cdl/SLC.cdl
+				  ../blocks/$(PLATFORM)/cdl/headerB.cdl \
+				  ../blocks/$(PLATFORM)/cdl/headerC.cdl \
+				  ../blocks/$(PLATFORM)/cdl/SLC.cdl
 
 # informs what cells should be placed in the smaller voltage domain
 export DOMAIN_INSTS_LIST 	= ../blocks/$(PLATFORM)/tempsenseInst_domain_insts.txt

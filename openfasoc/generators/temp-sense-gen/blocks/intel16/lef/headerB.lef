@@ -1,0 +1,91 @@
+VERSION 5.7 ;
+BUSBITCHARS "[]" ;
+DIVIDERCHAR "/" ;
+
+PROPERTYDEFINITIONS
+  MACRO CatenaDesignType STRING ;
+END PROPERTYDEFINITIONS
+
+MACRO headerB
+  CLASS CORE ;
+  ORIGIN 0 0 ;
+  FOREIGN headerB 0 0 ;
+  SIZE 0.648 BY 0.63 ;
+  SYMMETRY X Y ;
+  SITE CoreSite ;
+  PIN vcc
+    DIRECTION INOUT ;
+    USE POWER ;
+    SHAPE ABUTMENT ;
+    PORT
+      LAYER m1 ;
+        RECT -0.034 0.608 0.682 0.652 ;
+        RECT 0.506 0.518 0.574 0.652 ;
+        RECT 0.29 0.518 0.358 0.652 ;
+        RECT 0.074 0.518 0.142 0.652 ;
+    END
+  END vcc
+  PIN VIN
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER m1 ;
+        RECT 0.506 0.068 0.574 0.382 ;
+        RECT 0.29 0.068 0.358 0.382 ;
+        RECT 0.074 0.068 0.142 0.382 ;
+      LAYER m2 ;
+        RECT 0.056 0.097 0.592 0.141 ;
+        RECT 0.056 0.293 0.592 0.337 ;
+      LAYER m3 ;
+        RECT 0.512 0.062 0.568 0.372 ;
+        RECT 0.296 0.062 0.352 0.372 ;
+        RECT 0.08 0.062 0.136 0.372 ;
+      LAYER m4 ;
+        RECT 0.058 0.074 0.595 0.164 ;
+        RECT 0.058 0.27 0.595 0.36 ;
+      LAYER v3 ;
+        RECT 0.079 0.27 0.137 0.36 ;
+        RECT 0.079 0.074 0.137 0.164 ;
+        RECT 0.295 0.27 0.353 0.36 ;
+        RECT 0.295 0.074 0.353 0.164 ;
+        RECT 0.511 0.27 0.569 0.36 ;
+        RECT 0.511 0.074 0.569 0.164 ;
+      LAYER v2 ;
+        RECT 0.08 0.286 0.136 0.344 ;
+        RECT 0.08 0.09 0.136 0.148 ;
+        RECT 0.296 0.286 0.352 0.344 ;
+        RECT 0.296 0.09 0.352 0.148 ;
+        RECT 0.512 0.286 0.568 0.344 ;
+        RECT 0.512 0.09 0.568 0.148 ;
+      LAYER v1 ;
+        RECT 0.078 0.293 0.138 0.337 ;
+        RECT 0.078 0.097 0.138 0.141 ;
+        RECT 0.294 0.293 0.354 0.337 ;
+        RECT 0.294 0.097 0.354 0.141 ;
+        RECT 0.51 0.293 0.57 0.337 ;
+        RECT 0.51 0.097 0.57 0.141 ;
+    END
+  END VIN
+  PIN vssx
+    DIRECTION INOUT ;
+    USE GROUND ;
+    SHAPE ABUTMENT ;
+    PORT
+      LAYER m1 ;
+        RECT -0.034 -0.022 0.682 0.022 ;
+    END
+  END vssx
+  OBS
+    LAYER m1 ;
+      RECT 0.398 0.158 0.466 0.562 ;
+      RECT 0.182 0.158 0.25 0.562 ;
+    LAYER v1 ;
+      RECT 0.402 0.408 0.462 0.452 ;
+      RECT 0.186 0.408 0.246 0.452 ;
+    LAYER m2 ;
+      RECT 0.164 0.408 0.484 0.452 ;
+  END
+  PROPERTY CatenaDesignType "deviceLevel" ;
+END headerB
+
+END LIBRARY
