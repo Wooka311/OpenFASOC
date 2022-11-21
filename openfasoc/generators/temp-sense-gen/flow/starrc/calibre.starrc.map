@@ -1,0 +1,441 @@
+conducting_layers
+
+gm0nores gm0
+gm0res_cl gm0
+gm0resterm gm0
+gmbnores gmb
+gmbres_cl gmb
+gmbresterm gmb
+gmznores gmz
+gmzres_cl gmz
+gmzresterm gmz
+poly_CCPESD_ p rpsq=0.001
+b88rPoly_allcore p
+diffcon_nores_CCPESD_ tcn  rpsq=0.001
+C4BEMIB c4
+CE1 ce1
+CE2 ce2
+scl_mim_top_plate ce1
+scl_mim_bot_plate ce2
+metal8nores m8
+metal8nores_mfc m8
+metal8resterm m8
+m8IndPin m8
+m8IndPinCT m8
+EXPRESSVIATOP m6
+EXPRESSVIABOT m3
+metal7nores m7
+metal7nores_mfc m7
+metal7resterm m7
+m7IndPin m7
+m7IndPinCT m7
+b88xdcp_m7_pins m7
+b88xdcp_m7_pinA m7
+b88xdcp_m7_pinB m7
+b88xmfc_s2g_m7_pinA m7
+b88xmfc_s2g_m7_pinB m7
+b88xmfc_s2g_m7_pins m7
+b88xmfc_s2p_m7_pinA m7
+b88xmfc_s2p_m7_pinB m7
+b88xmfc_s2p_m7_pins m7
+metal6nores m6
+metal6nores_mfc m6
+metal6resterm m6
+m6IndPin m6
+m6IndPinCT m6
+b88xdcp_m6_pinA m6
+b88xdcp_m6_pinB m6
+b88xdcp_m6_pins m6
+b88xmfc_s2g_m6_pinA m6
+b88xmfc_s2g_m6_pinB m6
+b88xmfc_s2g_m6_pins m6
+b88xmfc_s2p_m6_pinA m6
+b88xmfc_s2p_m6_pinB m6
+b88xmfc_s2p_m6_pins m6
+metal5nores m5
+metal5nores_mfc m5
+metal5resterm m5
+b88xdcp_m5_pinA m5
+b88xdcp_m5_pinB m5
+b88xdcp_m5_pins m5
+b88xmfc_s2g_m5_pinA m5
+b88xmfc_s2g_m5_pinB m5
+b88xmfc_s2g_m5_pins m5
+b88xmfc_s2p_m5_pinA m5
+b88xmfc_s2p_m5_pinB m5
+b88xmfc_s2p_m5_pins m5
+metal4nores m4
+metal4nores_mfc m4
+metal4resterm m4
+b88xdcp_m4_pinA m4
+b88xdcp_m4_pinB m4
+b88xdcp_m4_pins m4
+b88xmfc_s2g_m4_pinA m4
+b88xmfc_s2g_m4_pinB m4
+b88xmfc_s2g_m4_pins m4
+b88xmfc_s2p_m4_pinA m4
+b88xmfc_s2p_m4_pinB m4
+b88xmfc_s2p_m4_pins m4
+metal3nores m3
+metal3nores_mfc m3
+metal3resterm m3
+b88xdcp_m3_pinA m3
+b88xdcp_m3_pinB m3
+b88xdcp_m3_pins m3
+b88xmfc_s2g_m3_pinA m3
+b88xmfc_s2g_m3_pinB m3
+b88xmfc_s2g_m3_pins m3
+b88xmfc_s2p_m3_pinA m3
+b88xmfc_s2p_m3_pinB m3
+b88xmfc_s2p_m3_pins m3
+nvm_anode m3
+metal2nores m2
+m2_skippcell m2
+m1_skippcell m1
+metal2nores_mfc m2
+metal2resterm m2
+nvm_cathode m2
+b88xdcp_m2_pinA m2
+b88xdcp_m2_pinB m2
+b88xdcp_m2_pins m2
+b88xmfc_s2g_m2_pinA m2
+b88xmfc_s2g_m2_pinB m2
+b88xmfc_s2g_m2_pins m2
+b88xmfc_s2p_m2_pinA m2
+b88xmfc_s2p_m2_pinB m2
+b88xmfc_s2p_m2_pins m2
+metal1nores m1
+metal1nores_mfc m1
+metal1resterm m1
+b88xdcp_m1_pinA m1
+b88xdcp_m1_pinB m1
+b88xdcp_m1_pins m1
+b88xmfc_s2g_m1_pinA m1
+b88xmfc_s2g_m1_pinB m1
+b88xmfc_s2g_m1_pins m1
+b88xmfc_s2p_m1_pinA m1
+b88xmfc_s2p_m1_pinB m1
+b88xmfc_s2p_m1_pins m1
+metal1res_cl m1
+metal2res_cl m2
+metal3res_cl m3
+metal4res_cl m4
+metal5res_cl m5
+metal6res_cl m6
+metal7res_cl m7
+metal8res_cl m8
+nwell_res_cl SUBSTRATE precedence=4
+poly_res_cl p
+polycon_res_cl gcn
+tfpolyconpin fcn
+poly_nores p
+polyresterm p
+b88rPoly_conPLa p
+b88rPoly_conPLb p
+b88rPolynwl_conPLa p
+b88rPolynwl_conPLb p
+b88rPolyseri_conPLa p
+b88rPolyseri_conPLb p
+b88rPolyserinwl_conPLa p
+b88rPolyserinwl_conPLb p
+ana_ngate p_gate
+ana_ngate_lp p_gate
+ana_ngate_lplvt p_gate
+ana_ngate_lvt p_gate
+ana_pgate p_gate
+ana_pgate_lp p_gate
+ana_pgate_lplvt p_gate
+ana_pgate_lvt p_gate
+mos_ngate p_gate
+mos_ngate_lp p_gate
+mos_ngate_hp p_gate
+mos_ngate_ulp p_gate
+mos_ngate_lplvt p_gate
+mos_ngate_lvt p_gate
+mos_ngate_srhcc p_gate
+mos_ngate_srhdc p_gate
+mos_ngate_srhdclp p_gate
+mos_ngate_srlvc p_gate
+mos_ngate_ulvt p_gate
+mos_ngate_sr p_gate
+mos_ngate_srll p_gate
+mos_pgate_sr p_gate
+mos_pgate_srll p_gate
+mos_pgate p_gate
+mos_pgate_lp p_gate
+mos_pgate_lplvt p_gate
+mos_pgate_lvt p_gate
+mos_pgate_hp p_gate
+mos_pgate_ulp p_gate
+mos_pgate_srhcc p_gate
+mos_pgate_srhdc p_gate
+mos_pgate_srhdclp p_gate
+mos_pgate_srlvc p_gate
+mos_pgate_ulvt p_gate
+mos_ngate_srhcc_tprf6t p_gate
+mos_pgate_srhcc_tprf6t p_gate
+mosmid_ngate_al74 p_gate
+mosmid_ngate_ell p_gate
+mosmid_ngate_elllvt p_gate
+mosmid_ngate_ll p_gate
+mosmid_ngate_lllvt p_gate
+mosmid_ngate_srhccll p_gate
+mosmid_ngate_srhdcll p_gate
+mosmid_pgate_al74 p_gate
+mosmid_pgate_ell p_gate
+mosmid_pgate_elllvt p_gate
+mosmid_pgate_ll p_gate
+mosmid_pgate_lllvt p_gate
+mosmid_pgate_srhccll p_gate
+mosmid_pgate_srhdcll p_gate
+mosmtg_ngate_al120 p_gate
+mosmtg_ngate_tglv p_gate
+mosmtg_ngate_tgmv p_gate
+mosmtg_pgate_al120 p_gate
+mosmtg_pgate_tglv p_gate
+mosmtg_pgate_tgmv p_gate
+mospp2_ngate_tgehv p_gate
+mospp2_ngate_tgehvlvt p_gate
+mospp2_ngate_tguhv p_gate
+mospp2_ngate_tguhvlvt p_gate
+mospp2_pgate_tgehv p_gate
+mospp2_pgate_tgehvlvt p_gate
+mospp2_pgate_tguhv p_gate
+mospp2_pgate_tguhvlvt p_gate
+mospp2urid_ngate_tg p_gate
+mospp2urid_ngate_tgll p_gate
+mospp2urid_ngate_tglvt p_gate
+mospp2urid_pgate_tg p_gate
+mospp2urid_pgate_tgll p_gate
+mospp2urid_pgate_tglvt p_gate
+mostg_ngate_al160 p_gate
+mostg_ngate_tg p_gate
+mostg_ngate_tghv p_gate
+mostg_ngate_tghvlvt p_gate
+mostg_pgate_al160 p_gate
+mostg_pgate_tg p_gate
+mostg_pgate_tghv p_gate
+mostg_pgate_tghvlvt p_gate
+mospp2_ngate_edmos p_gate
+mospp2_pgate_edmos p_gate
+mos_ngate_dnwrfhp p_gate rpsq=0.001
+mosmtg_ngate_nrfhyp120 p_gate rpsq=0.001
+mostg_ngate_nrfhyp160 p_gate rpsq=0.001
+mos_ngate_rfhp p_gate rpsq=0.001
+mos_pgate_rfhp p_gate rpsq=0.001
+mospp3_ngate_edmos p_gate
+mospp3_pgate_edmos p_gate
+rf_ngate_hp p_gate   rpsq=0.001
+rf_ngate_ulvt p_gate  rpsq=0.001
+rf_pgate_hp p_gate  rpsq=0.001
+rf_pgate_ulvt p_gate  rpsq=0.001
+rf_ngate p_gate  rpsq=0.001
+rf_ngate_lp p_gate  rpsq=0.001
+rf_ngate_lplvt p_gate  rpsq=0.001
+rf_ngate_lvt p_gate  rpsq=0.001
+rf_pgate p_gate  rpsq=0.001
+rf_pgate_lp p_gate  rpsq=0.001
+rf_pgate_lplvt p_gate  rpsq=0.001
+rf_pgate_lvt p_gate  rpsq=0.001
+rftg_ngate_tg p_gate  rpsq=0.001
+rftg_pgate_tg p_gate  rpsq=0.001
+rfid_ngate_hp p_gate  rpsq=0.001
+rfid_pgate_hp p_gate  rpsq=0.001
+cap_ngate p_gate
+cap_pgate p_gate
+esd_ngate p_gate
+esd_ngate_gbnclmpres p_gate
+esd_ngate_gbnclmprescon p_gate
+gnac_ngate p_gate
+hvgnac_ngate p_gate
+p_dummy_gate_fbd p_gate
+n_dummy_gate p_gate
+hdcapp1_port1 p_gate
+diffcon_nores tcn device_layer
+diffcon_res_cl tcn device_layer
+diffconresterm tcn device_layer
+polyconpin_mfc gcn
+polycon_nores gcn
+polycon_nores_mfc gcn
+polyconresterm gcn
+b88rPoly_conPCa gcn
+b88rPoly_conPCb gcn
+b88rPolynwl_conPCa gcn
+b88rPolynwl_conPCb gcn
+b88rPolypara_conPCa gcn
+b88rPolypara_conPCb gcn
+b88rPolyparanwl_conPCa gcn
+b88rPolyparanwl_conPCb gcn
+b88rPolyseri_conPCa gcn
+b88rPolyseri_conPCb gcn
+b88rPolyserinwl_conPCa gcn
+b88rPolyserinwl_conPCb gcn
+b88rGcn_conPCa gcn
+b88rGcn_conPCb gcn
+b88rGcnnwl_conPCa gcn
+b88rGcnnwl_conPCb gcn
+b88rGcnpara_conPCa gcn
+b88rGcnpara_conPCb gcn
+b88rGcnparanwl_conPCa gcn
+b88rGcnparanwl_conPCb gcn
+b88rGcnser_conPCa gcn
+b88rGcnser_conPCb gcn
+b88rGcnsernwl_conPCa gcn
+b88rGcnsernwl_conPCb gcn
+tf_nores tfr
+tfpolycon_nores fcn
+nsd_lvs nd device_layer
+nrfhyp_src nd device_layer
+nrfhyp_drn nd device_layer 
+ednmosD nd
+ednmosS nd
+gbnbulk nd
+nac_cathode_esd nd
+welltap nd
+psd_lvs pd device_layer
+ana_nsd nd device_layer
+ana_psd pd device_layer
+rf_nsd nd device_layer
+rf_psd pd device_layer
+edpmosD pd
+edpmosS pd
+anode pd
+anode_nbjt_esd pd
+bjt_coll pd
+bjt_collector pd
+bjt_emit pd
+bjt_emitter pd
+bjt_collNPN nd
+bjt_collectorNPN nd
+bjt_emitNPN nd
+bjt_emitterNPN nd
+bjt_baseNPN pd
+subtap pd
+wafertap pd
+bjt_base SUBSTRATE precedence=4
+cathode SUBSTRATE precedence=4
+nwell_nores SUBSTRATE precedence=4
+b88rPolynwl_con SUBSTRATE precedence=4
+b88rPolyparanwl_con SUBSTRATE precedence=4
+b88rPolyserinwl_con SUBSTRATE precedence=4
+b88xp_gcnnwl_con SUBSTRATE precedence=4
+b88xp_gcnparanwl_con SUBSTRATE precedence=4
+b88xp_gcnsernwlid_con SUBSTRATE precedence=4
+isopwell SUBSTRATE precedence=4
+dnpdnw_anode SUBSTRATE precedence=4
+djnw_cathode SUBSTRATE precedence=3
+deep_nwell SUBSTRATE precedence=3
+dpndnw_cathode SUBSTRATE precedence=3
+djnwdba_cathode SUBSTRATE precedence=3
+subiso SUBSTRATE precedence=2
+b88xp_poly_subiso SUBSTRATE precedence=2
+b88xp_polypara_subiso SUBSTRATE precedence=2
+b88xp_polyseri_subiso SUBSTRATE precedence=2
+b88xp_gcn_subiso SUBSTRATE precedence=2
+b88xp_gcnpara_subiso SUBSTRATE precedence=2
+b88xp_gcnseri_subiso SUBSTRATE precedence=2
+nac_anode SUBSTRATE precedence=2
+djnw_anode SUBSTRATE precedence=1
+realsub SUBSTRATE precedence=0
+pwellsub SUBSTRATE precedence=4
+hdcap_port1 m2
+hdcap_port2 m2
+hdcap_shield m2
+hdcap2vss_port1 m2
+hdcap2vss_port2 m2
+hdcap2vss_shield m2
+hdcapm1_port1 m1
+hdcapm1_port2 m1
+hdcapm1_shield m1
+hdcap2vssm1_port1 m1
+hdcap2vssm1_port2 m1
+hdcap2vssm1_shield m1
+_IDv1_MIDPITCHID driftid
+_IDv1_POLYPITCH1 driftid
+_IDv1_POLYPITCH2 driftid
+_IDv1_TGPITCHID driftid
+
+via_layers 
+
+GV1 gv1
+viace2 viace2
+viace1 viace1
+GV0 gv0
+V7 via7
+V8 via8
+VIAMZ viamz
+V3E7 via3e7
+V6 via6
+V5 via5
+V4 via4
+V3 via3
+V2 via2
+V1 via1
+V0G via0gcn
+V0T via0tcn
+tfv0g viaf
+cont_ndiff2tcn contact_nd2tcn
+cont_pdiff2tcn contact_pd2tcn
+cont_sub2subtap contact_substrate2pd
+cont_sub2wafertap contact_substrate2pd
+cont_sub2welltap contact_substrate2nd
+
+marker_layers
+
+c4bpin
+gm0pin
+gmbpin
+gmzpin
+metal8pin
+metal7pin
+metal6pin
+metal5pin
+metal4pin
+metal3pin
+metal2pin
+metal1pin
+poly1pin
+polyconpin
+
+remove_layers
+subiso_flat
+c4bemib_
+nwell_dnw_nores
+poly_glbcon
+psd_lvs_pre
+nsd_lvs_pre
+polypara_nores_b88rPoly 
+poly_nores_b88rPoly 
+polynwl_nores_b88rPoly 
+polyparanwl_nores_b88rPoly 
+polyseri_nores_b88rPoly 
+polyserinwl_nores_b88rPoly 
+V0
+CE3
+mim_scl_ce2_nominal_term
+mim_scl_ce1_nominal_term
+custom_stack_mimcap_term 
+tf_series 
+tf_series_gr 
+tf_series_dnw 
+tf_series_dnw_gr 
+tf_iso 
+tf_iso_gr 
+tf_iso_dnw 
+tf_iso_dnw_gr 
+tf_parallel 
+tf_parallel_gr 
+tf_parallel_dnw 
+tf_parallel_dnw_gr 
+tf_zigzag 
+tf_zigzag_gr 
+tf_zigzag_dnw 
+tf_zigzag_dnw_gr 
+int_diode_err 
+B88TFRDACCON 
+B88TFRDACBOD 
+
+ignore_cap_layers
+
+poly_CCPESD_ poly_CCPESD_ diffcon_nores_CCPESD_ SUBSTRATE 
+subiso SUBSTRATE

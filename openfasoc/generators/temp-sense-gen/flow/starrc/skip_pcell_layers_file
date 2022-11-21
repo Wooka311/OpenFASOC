@@ -1,0 +1,28 @@
+PCELL_LAYERS
+
+*b88x_ednrf_* ITF::m2 ITF::via1 ITF::m1 ITF::p ITF::nd ITF::pd ITF::p_gate ITF::gcn ITF::tcn ITF::via0gcn ITF::via0tcn
+*b88x_edprf_* ITF::m2 ITF::via1 ITF::m1 ITF::p ITF::nd ITF::pd ITF::p_gate ITF::gcn ITF::tcn ITF::via0gcn ITF::via0tcn
+*b88xp_tfr_unit* ITF::fcn ITF::tfr ITF::p ITF::nd ITF::pd ITF::p_gate ITF::gcn ITF::tcn
+*b88xp_tfr_fill* ITF::fcn ITF::tfr ITF::p ITF::nd ITF::pd ITF::p_gate ITF::gcn ITF::tcn
+*b88xp_tfrdacbody* ITF::fcn ITF::tfr ITF::m1 ITF::p ITF::nd ITF::pd ITF::p_gate ITF::gcn ITF::tcn ITF::via0gcn ITF::via0tcn
+*b88xp_tfrdaccon* ITF::fcn ITF::tfr ITF::m2 ITF::via1 ITF::m1 ITF::p ITF::nd ITF::pd ITF::p_gate ITF::gcn ITF::tcn ITF::via0gcn ITF::via0tcn
+*b88xp_nrfhp_* m1_skippcell ITF::p ITF::nd ITF::pd ITF::p_gate ITF::gcn ITF::tcn ITF::via0gcn ITF::via0tcn
+*b88xp_prfhp_* m1_skippcell ITF::p ITF::nd ITF::pd ITF::p_gate ITF::gcn ITF::tcn ITF::via0gcn ITF::via0tcn
+*b88xp_ndnwrfhp_* m1_skippcell ITF::p ITF::nd ITF::pd ITF::p_gate ITF::gcn ITF::tcn ITF::via0gcn ITF::via0tcn
+
+
+*b88xp_plvtrf_* ITF::via1 ITF::m1 ITF::p ITF::nd ITF::pd ITF::p_gate ITF::gcn ITF::tcn ITF::via0gcn ITF::via0tcn m2_skippcell
+*b88xp_nlvtrf_* ITF::via1 ITF::m1 ITF::p ITF::nd ITF::pd ITF::p_gate ITF::gcn ITF::tcn ITF::via0gcn ITF::via0tcn m2_skippcell
+*b88xp_nrf_* ITF::via1 ITF::m1 ITF::p ITF::nd ITF::pd ITF::p_gate ITF::gcn ITF::tcn ITF::via0gcn ITF::via0tcn m2_skippcell
+
+*b88xp_ntgrf_* ITF::via1 ITF::m1 ITF::p ITF::nd ITF::pd ITF::p_gate ITF::gcn ITF::tcn ITF::via0gcn ITF::via0tcn m2_skippcell
+
+*b88xp_prf_* ITF::via1 ITF::m1 ITF::p ITF::nd ITF::pd ITF::p_gate ITF::gcn ITF::tcn ITF::via0gcn ITF::via0tcn m2_skippcell
+
+*b88xp_ptgrf_*  ITF::via1 ITF::m1 ITF::p ITF::nd ITF::pd ITF::p_gate ITF::gcn ITF::tcn ITF::via0gcn ITF::via0tcn m2_skippcell
+*b88xp_nrfll_* ITF::via1 ITF::m1 ITF::p ITF::nd ITF::pd ITF::p_gate ITF::gcn ITF::tcn ITF::via0gcn ITF::via0tcn m2_skippcell
+*b88xp_nlvtrfll_* ITF::via1 ITF::m1 ITF::p ITF::nd ITF::pd ITF::p_gate ITF::gcn ITF::tcn ITF::via0gcn ITF::via0tcn m2_skippcell
+*b88xp_prfll_* ITF::via1 ITF::m1 ITF::p ITF::nd ITF::pd ITF::p_gate ITF::gcn ITF::tcn ITF::via0gcn ITF::via0tcn m2_skippcell
+*b88xp_plvtrfll_* ITF::via1 ITF::m1 ITF::p ITF::nd ITF::pd ITF::p_gate ITF::gcn ITF::tcn ITF::via0gcn ITF::via0tcn m2_skippcell
+*b88xp_nrfhyp120_* ITF::via1 ITF::m1 ITF::p ITF::nd ITF::pd ITF::p_gate ITF::gcn ITF::tcn ITF::via0gcn ITF::via0tcn m2_skippcell
+*b88xp_nrfhyp160_* ITF::via1 ITF::m1 ITF::p ITF::nd ITF::pd ITF::p_gate ITF::gcn ITF::tcn ITF::via0gcn ITF::via0tcn m2_skippcell
