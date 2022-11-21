@@ -14,7 +14,7 @@ clean_calibre:
 calibre_drc: finish
 	rm -rf calibre/drc && mkdir -p calibre/drc && cd calibre/drc && \
 	sh $(Calibre_RUNSET)/p1222.sh && \
-	calibre -gui | tee drcc.log
+	calibre -drc -hier -turbo -hyper $(Calibre_RUNSET)/p1222_drcc.svrf | tee drcc.log
 
 calibre_antenna: finish
 	rm -rf calibre/antenna && mkdir -p calibre/antenna && cd calibre/antenna && \
