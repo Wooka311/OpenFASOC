@@ -71,17 +71,13 @@ define_pdn_grid -name stdcell_analog -pins m3 -starts_with POWER -voltage_domain
 
 add_pdn_stripe -grid stdcell_analog -layer m1 -width 0.044 -followpins
 add_pdn_stripe -grid stdcell_analog -layer m2 -width 0.044 -followpins
-add_pdn_ring -grid stdcell_analog -layer {m7 m8} -widths {0.3 0.3} -spacings {0.24 0.24} -core_offsets {0.24 0.24}
-add_pdn_stripe -grid stdcell_analog -layer m7 -width 0.180 -pitch 10.80 -offset 1.765 -extend_to_core_ring
-add_pdn_stripe -grid stdcell_analog -layer m6 -width 0.160 -pitch 10.80 -offset 3.240 -extend_to_core_ring
-add_pdn_stripe -grid stdcell_analog -layer m5 -width 0.044 -pitch 10.80 -offset 2.304
-add_pdn_stripe -grid stdcell_analog -layer m4 -width 0.044 -pitch 10.80 -offset 3.240
-add_pdn_stripe -grid stdcell_analog -layer m3 -width 0.044 -pitch 10.80 -offset 2.304
+add_pdn_ring -grid stdcell_analog -layer {m3 m4} -widths {0.108 0.108} -spacings {0.108 0.108} -core_offsets {0.108 0.108}
+add_pdn_stripe -grid stdcell_analog -layer m3 -width 0.044 -pitch 2.160 -offset 1 -snap_to_grid -extend_to_core_ring
 
 add_pdn_connect -grid stdcell_analog -layers {m1 m2} -dont_use_vias ".*_illegal" -ongrid {m1}
 add_pdn_connect -grid stdcell_analog -layers {m2 m3} -dont_use_vias ".*_illegal" 
 add_pdn_connect -grid stdcell_analog -layers {m3 m4} -dont_use_vias ".*_illegal" 
-add_pdn_connect -grid stdcell_analog -layers {m4 m5} -dont_use_vias ".*_illegal" 
-add_pdn_connect -grid stdcell_analog -layers {m5 m6} -dont_use_vias ".*_illegal" 
-add_pdn_connect -grid stdcell_analog -layers {m6 m7} -dont_use_vias ".*_illegal"
-add_pdn_connect -grid stdcell_analog -layers {m7 m8} -dont_use_vias ".*_illegal"
+
+place_cell -cell headerA -inst temp_analog_1.a_header_0 -origin {16.308 10.71} -orient R0 -status FIRM
+place_cell -cell headerA -inst temp_analog_1.a_header_1 -origin {16.308 13.23} -orient R0 -status FIRM
+place_cell -cell headerA -inst temp_analog_1.a_header_2 -origin {16.308 11.97} -orient R0 -status FIRM

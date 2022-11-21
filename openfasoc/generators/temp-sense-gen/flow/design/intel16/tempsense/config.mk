@@ -7,17 +7,11 @@ export VERILOG_FILES 		= $(sort $(wildcard ./design/src/$(DESIGN_NICKNAME)/*.v))
 			  	  ../blocks/$(PLATFORM)/tempsenseInst.blackbox.v
 export SDC_FILE    		= ./design/$(PLATFORM)/$(DESIGN_NICKNAME)/constraint.sdc
 
-#export DIE_AREA   	 	= 0 0 37.104 37.5
-#export CORE_AREA   		= 3 3 34.104 34.5
-#export DIE_AREA   	 	= 0 0 161.52 163.5
-#export CORE_AREA   		= 3 3 158.52 160.5
-export DIE_AREA   	 	= 0 0 40.992 40.65
-export CORE_AREA   		= 3 3 37.992 37.65
+export DIE_AREA   	 	= 0 0 33.048 34.02
+export CORE_AREA   		= 3.024 3.15 30.024 30.87
 
 # area of the smaller voltage domain
-#export VD1_AREA                 = 4.404 4.89 17.148 16.86
-#export VD1_AREA                 = 4.404 4.89 79.356 79.86 
-export VD1_AREA                 = 4.404 5.52 19.092 18.27
+export VD1_AREA                 = 4.428 4.41 11.556 9.45
 
 # power delivery network config file
 export PDN_TCL 			= ../blocks/$(PLATFORM)/pdn.tcl
