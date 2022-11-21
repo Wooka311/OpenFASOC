@@ -551,7 +551,7 @@ finish: $(LOG_DIR)/6_report.log \
         $(RESULTS_DIR)/6_final.v \
         $(RESULTS_DIR)/6_final.sdc \
 	$(RESULTS_DIR)/6_final_concat.cdl \
-        $(RESULTS_DIR)/7_fill.gds
+        $(GDS_FINAL_FILE)
 # ==============================================================================
 
 ifneq ($(USE_FILL),)
@@ -671,10 +671,25 @@ clean_finish:
 	rm -rf $(REPORTS_DIR)/6_*.rpt
 	rm -f  $(LOG_DIR)/6_*
 
+fill:$(RESULTS_DIR)/7_fill.gds
+
 $(RESULTS_DIR)/7_fill.gds: $(GDS_FINAL_FILE)
 	rm -rf fill && mkdir fill && cd fill && \
 	calibre -drc -hier -turbo -hyper $(Fill_RUNSET)/p1222_fill.svrf | tee fill.log
 	cp fill/$(DESIGN_NAME)_fill.gds $(RESULTS_DIR)/7_fill.gds
+
+extract: $(RESULTS_DIR)/7_extract.sp
+
+$(RESULTS_DIR)/7_extract.sp:
+	rm -rf starrc/extraction_a && mkdir -p starrc/extraction_a && cd starrc/extraction_a && \
+	envsubst < ../star_ccp.custom.cmd > run.cmd && \
+	StarXtract -clean run.cmd 
+	#cp $(STARRC_SPEF) $(STARRC_SPEF_FILES)
+	#mkdir -p netlist && rm -rf netlist/$(DESIGN_NICKNAME) && mkdir netlist/$(DESIGN_NICKNAME) && \
+	#cp $(RESULTS_DIR)/6_final.v netlist/$(DESIGN_NICKNAME)/$(DESIGN_NAME).sv && \
+	#cp $(RESULTS_DIR)/6_final.sdc netlist/$(DESIGN_NICKNAME)/$(DESIGN_NAME).sdc && \
+	#cp $(RESULTS_DIR)/7_fill.spef netlist/$(DESIGN_NICKNAME)/$(DESIGN_NAME).spef
+
 
 
 

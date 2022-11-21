@@ -14,7 +14,7 @@ clean_calibre:
 calibre_drc: finish
 	rm -rf calibre/drc && mkdir -p calibre/drc && cd calibre/drc && \
 	sh $(Calibre_RUNSET)/p1222.sh && \
-	calibre -drc -hier -turbo -hyper $(Calibre_RUNSET)/p1222_drcc.svrf | tee drcc.log
+	calibre -gui | tee drcc.log
 
 calibre_antenna: finish
 	rm -rf calibre/antenna && mkdir -p calibre/antenna && cd calibre/antenna && \
@@ -31,11 +31,19 @@ calibre_hveos: finish
 	sh $(Calibre_RUNSET)/p1222.sh && \
 	calibre -perc -ldl -hier -turbo -hyper $(Calibre_RUNSET)/p1222_drcperc.svrf | tee drcperc.log
 
-calibre_lvs: finish
+calibre_lvs_gui:
 	rm -rf calibre/lvs && mkdir -p calibre/lvs && cd calibre/lvs && \
 	sh $(Calibre_RUNSET)/p1222.sh && \
-	\
+	calibre -gui | tee lvs.log
+
+calibre_lvs:
+	rm -rf calibre/lvs && mkdir -p calibre/lvs && cd calibre/lvs && \
+	sh $(Calibre_RUNSET)/p1222.sh && \
 	calibre -lvs -hier -turbo -hyper $(Calibre_RUNSET)/p1222_lvs.svrf | tee lvs.log
+
+calibre_lvs_cci:
+	cd calibre/lvs && cp ../query.cmd . && \
+	calibre -query svdb < query.cmd
 
 view_calibre_drc:
 	calibredrv -m $(DR_INPUT_FILE) -l $(LAYER_PROPERTY) -rve -drc calibre/drc/$(DR_RVE_FILE)
