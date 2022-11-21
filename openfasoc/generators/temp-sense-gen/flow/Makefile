@@ -681,7 +681,7 @@ $(RESULTS_DIR)/7_fill.gds: $(GDS_FINAL_FILE)
 extract: $(RESULTS_DIR)/7_extract.sp
 
 $(RESULTS_DIR)/7_extract.sp:
-	rm -rf starrc/extraction_a && mkdir -p starrc/extraction_a && cd starrc/extraction_a && \
+	rm -rf starrc/extraction && mkdir -p starrc/extraction && cd starrc/extraction && \
 	envsubst < ../star_ccp.custom.cmd > run.cmd && \
 	StarXtract -clean run.cmd 
 	#cp $(STARRC_SPEF) $(STARRC_SPEF_FILES)
