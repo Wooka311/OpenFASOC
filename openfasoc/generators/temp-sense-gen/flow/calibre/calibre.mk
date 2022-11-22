@@ -9,7 +9,13 @@ calibre: calibre_drc calibre_antenna calibre_density calibre_hveos calibre_lvs
 
 clean_calibre: 
 	rm -rf calibre/drc && rm -rf calibre/antenna && \
-	rm -rf calibre/density && rm -rf calibre/hveos && rm -rf calibre/lvs
+	rm -rf calibre/density && rm -rf calibre/hveos && rm -rf calibre/lvs && rm -rf calibre/drc_prefill
+
+calibre_drc_prefill: finish
+	export DC_PRE_FILL=YES && export DR_INPUT_FILE=$(abspath $(RESULTS_DIR)/6_final.gds) && \
+	rm -rf calibre/drc_prefill && mkdir -p calibre/drc_prefill && cd calibre/drc_prefill && \
+	sh $(Calibre_RUNSET)/p1222.sh && \
+	calibre -drc -hier -turbo -hyper $(Calibre_RUNSET)/p1222_drcc.svrf | tee drcc.log
 
 calibre_drc: finish
 	rm -rf calibre/drc && mkdir -p calibre/drc && cd calibre/drc && \
