@@ -27,7 +27,7 @@ args = parser.parse_args()
 with open(args.inputCdl, "r") as rf:
     filedata = rf.read()
     filedata = filedata.replace(
-        "VIN ", "", 1
+        "VIN ", "r_VIN", 1
     )  # replace VIN with nothing one time (i.e. delete the pin in toplevel)
 
     # If only one connection point for the r_VIN route is specified, then the pin is r_VIN
