@@ -37,6 +37,7 @@ if { [info exists ::env(DISABLE_VIA_GEN)]} {
   append additional_args " -disable_via_gen"
 }
 
+detailed_route_set_unidirectional_layer m6
 
 detailed_route -output_drc $::env(REPORTS_DIR)/5_route_drc.rpt \
                -output_maze $::env(RESULTS_DIR)/maze.log \
