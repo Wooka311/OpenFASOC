@@ -51,6 +51,9 @@ calibre_lvs_cci:
 	cd calibre/lvs && cp ../query.cmd . && \
 	calibre -query svdb < query.cmd
 
+view_calibre:
+	calibredrv -l $(LAYER_PROPERTY) -m $(abspath $(RESULTS_DIR)/6_final.gds) 
+
 view_calibre_drc_prefill:
 	calibredrv -m $(abspath $(RESULTS_DIR)/6_final.gds) -l $(LAYER_PROPERTY) -rve -drc calibre/drc_prefill/$(DR_RVE_FILE)
 
