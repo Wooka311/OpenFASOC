@@ -73,7 +73,7 @@ define_pdn_grid -name stdcell_analog -pins m4 -starts_with POWER -voltage_domain
 add_pdn_stripe -grid stdcell_analog -layer m1 -width 0.044 -followpins
 add_pdn_stripe -grid stdcell_analog -layer m2 -width 0.044 -followpins -extend_to_core_ring
 add_pdn_ring -grid stdcell_analog -layer {m3 m4} -widths {0.044 0.044} -spacings {0.046 0.046} -core_offsets {0.09 0.09}
-add_pdn_stripe -grid stdcell_analog -layer m3 -width 0.044 -pitch 1.08 -offset 0.3 -snap_to_grid -extend_to_core_ring
+add_pdn_stripe -grid stdcell_analog -layer m3 -width 0.044 -pitch 0.54 -offset 0.3 -snap_to_grid -extend_to_core_ring
 
 add_pdn_connect -grid stdcell_analog -layers {m1 m2} -dont_use_vias ".*_illegal" -ongrid {m1}
 add_pdn_connect -grid stdcell_analog -layers {m2 m3} -dont_use_vias ".*_illegal" 
