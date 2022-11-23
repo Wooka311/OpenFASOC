@@ -45,7 +45,7 @@ calibre_lvs_gui:
 calibre_lvs:
 	rm -rf calibre/lvs && mkdir -p calibre/lvs && cd calibre/lvs && \
 	sh $(Calibre_RUNSET)/p1222.sh && \
-	calibre -lvs -hier -turbo -hyper $(Calibre_RUNSET)/p1222_lvs.svrf | tee lvs.log
+	DR_INPUT_FILE=$(abspath $(RESULTS_DIR)/6_final.gds) calibre -lvs -hier -turbo -hyper $(Calibre_RUNSET)/p1222_lvs.svrf | tee lvs.log
 
 calibre_lvs_cci:
 	cd calibre/lvs && cp ../query.cmd . && \
