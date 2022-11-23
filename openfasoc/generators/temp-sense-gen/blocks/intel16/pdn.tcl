@@ -7,7 +7,7 @@ set caps_analog {}
 set caps_core {}
 foreach inst $all_insts {
   if {[[$inst getMaster] getName] eq "b15ztpn00an1d03x5" || \
-      [[$inst getMaster] getName] eq "b15zdcf11an1n04x5"} {
+      [[$inst getMaster] getName] eq "b15zdcf11an1n08x5"} {
     set box [$inst getBBox]
 
     # Select cells from TEMP_ANALOG region
@@ -41,6 +41,7 @@ global_connect
 set_voltage_domain -name CORE -power VDD -ground VSS
 set_voltage_domain -region TEMP_ANALOG -power VIN -ground VSS
 
+
 # Standard cell grids
 # VDD / GND
 define_pdn_grid -name stdcell -pins m8 -starts_with POWER -voltage_domains CORE
@@ -71,12 +72,16 @@ define_pdn_grid -name stdcell_analog -pins m4 -starts_with POWER -voltage_domain
 
 add_pdn_stripe -grid stdcell_analog -layer m1 -width 0.044 -followpins
 add_pdn_stripe -grid stdcell_analog -layer m2 -width 0.044 -followpins
-add_pdn_ring -grid stdcell_analog -layer {m3 m4} -widths {0.044 0.044} -spacings {0.066 0.066} -core_offsets {0.066 0.066}
-add_pdn_stripe -grid stdcell_analog -layer m3 -width 0.044 -pitch 1.08 -offset 0.810 -snap_to_grid -extend_to_core_ring
+add_pdn_ring -grid stdcell_analog -layer {m3 m4} -widths {0.044 0.044} -spacings {0.046 0.046} -core_offsets {0.09 0.09}
+add_pdn_stripe -grid stdcell_analog -layer m3 -width 0.044 -pitch 1.08 -offset 0.63 -snap_to_grid -extend_to_core_ring
 
 add_pdn_connect -grid stdcell_analog -layers {m1 m2} -dont_use_vias ".*_illegal" -ongrid {m1}
 add_pdn_connect -grid stdcell_analog -layers {m2 m3} -dont_use_vias ".*_illegal" 
 add_pdn_connect -grid stdcell_analog -layers {m3 m4} -dont_use_vias ".*_illegal" 
+add_pdn_connect -grid stdcell_analog -layers {m4 m5} -dont_use_vias ".*_illegal" 
+add_pdn_connect -grid stdcell_analog -layers {m5 m6} -dont_use_vias ".*_illegal" 
+add_pdn_connect -grid stdcell_analog -layers {m6 m7} -dont_use_vias ".*_illegal"
+add_pdn_connect -grid stdcell_analog -layers {m7 m8} -dont_use_vias ".*_illegal"
 
 place_cell -cell headerA -inst temp_analog_1.a_header_0 -origin {16.308 10.71} -orient R0 -status FIRM
 place_cell -cell headerA -inst temp_analog_1.a_header_1 -origin {16.308 13.23} -orient R0 -status FIRM
