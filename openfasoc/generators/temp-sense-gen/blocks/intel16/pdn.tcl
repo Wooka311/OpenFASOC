@@ -83,6 +83,6 @@ add_pdn_connect -grid stdcell_analog -layers {m5 m6} -dont_use_vias ".*_illegal"
 add_pdn_connect -grid stdcell_analog -layers {m6 m7} -dont_use_vias ".*_illegal"
 add_pdn_connect -grid stdcell_analog -layers {m7 m8} -dont_use_vias ".*_illegal"
 
-place_cell -cell headerA -inst temp_analog_1.a_header_0 -origin {16.308 10.71} -orient R0 -status FIRM
-place_cell -cell headerA -inst temp_analog_1.a_header_1 -origin {16.308 13.23} -orient R0 -status FIRM
-place_cell -cell headerA -inst temp_analog_1.a_header_2 -origin {16.308 11.97} -orient R0 -status FIRM
+if {[info exist ::env(HEADER_TCL)]} {
+  source $::env(HEADER_TCL)
+}

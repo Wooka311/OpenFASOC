@@ -16,6 +16,8 @@ export VD1_AREA                 = 4.428 4.41 11.556 9.45
 # power delivery network config file
 export PDN_TCL 			= ../blocks/$(PLATFORM)/pdn.tcl
 
+export HEADER_TCL		= ../blocks/$(PLATFORM)/pdn_header.tcl
+
 export ADDITIONAL_LEFS  	+= ../blocks/$(PLATFORM)/lef/headerA.lef \
                        	  	   ../blocks/$(PLATFORM)/lef/headerB.lef \
                                    ../blocks/$(PLATFORM)/lef/headerC.lef \
