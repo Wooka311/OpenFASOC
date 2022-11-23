@@ -66,6 +66,7 @@ include $(PLATFORM_DIR)/config.mk
 
 $(info [INFO][FLOW] Using commercial tool)
 include calibre/calibre.mk
+include icv/icv.mk
 
 export GALLERY_REPORT ?= 0
 # Enables hierarchical yosys
