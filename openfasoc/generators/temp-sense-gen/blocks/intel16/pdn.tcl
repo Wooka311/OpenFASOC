@@ -48,15 +48,15 @@ define_pdn_grid -name stdcell -pins m8 -starts_with POWER -voltage_domains CORE
 add_pdn_stripe -grid stdcell -layer m1 -width 0.044 -followpins
 add_pdn_stripe -grid stdcell -layer m2 -width 0.044 -followpins
 add_pdn_ring -grid stdcell -layer {m7 m8} -widths {0.9 0.9} -spacings {0.36 0.36} -core_offsets {0.36 0.36}
-add_pdn_stripe -grid stdcell -layer m7 -width 0.180 -pitch 10.80 -offset 1.765 -extend_to_core_ring
-add_pdn_stripe -grid stdcell -layer m6 -width 0.160 -pitch 10.80 -offset 3.240 -extend_to_core_ring
-add_pdn_stripe -grid stdcell -layer m5 -width 0.044 -pitch 10.80 -offset 2.304
-add_pdn_stripe -grid stdcell -layer m4 -width 0.044 -pitch 10.80 -offset 3.240
-add_pdn_stripe -grid stdcell -layer m3 -width 0.044 -pitch 10.80 -offset 2.304
+add_pdn_stripe -grid stdcell -layer m7 -width 0.180 -pitch 5.4 -offset 1.35 -extend_to_core_ring -snap_to_grid
+add_pdn_stripe -grid stdcell -layer m6 -width 0.160 -pitch 5.4 -offset 1.35 -extend_to_core_ring -snap_to_grid
+add_pdn_stripe -grid stdcell -layer m5 -width 0.044 -pitch 1.08 -offset 0.63 -snap_to_grid
+add_pdn_stripe -grid stdcell -layer m4 -width 0.044 -pitch 1.26 -offset 0.63 -snap_to_grid
+add_pdn_stripe -grid stdcell -layer m3 -width 0.044 -pitch 1.08 -offset 0.63 -snap_to_grid
 
 # Straps to connect the two domains together
-#add_pdn_stripe -grid stdcell -layer m8 -width 0.18 -offset 10.0 -pitch 4.320 -extend_to_core_ring -starts_with GROUND
-#add_pdn_stripe -grid stdcell -layer m8 -width 0.18 -pitch 4.320 -extend_to_core_ring -starts_with GROUND -number_of_straps 4 -nets VSS
+#add_pdn_stripe -grid stdcell -layer m6 -width 0.16 -offset 10.0 -pitch 4.320 -extend_to_core_ring -starts_with GROUND
+add_pdn_stripe -grid stdcell -layer m6 -width 0.16 -pitch 5.5 -offset 2.6 -extend_to_core_ring -starts_with GROUND -number_of_straps 1 -nets VSS -snap_to_grid
 
 add_pdn_connect -grid stdcell -layers {m1 m2} -dont_use_vias ".*_illegal" -ongrid {m1}
 add_pdn_connect -grid stdcell -layers {m2 m3} -dont_use_vias ".*_illegal" 
@@ -67,12 +67,12 @@ add_pdn_connect -grid stdcell -layers {m6 m7} -dont_use_vias ".*_illegal"
 add_pdn_connect -grid stdcell -layers {m7 m8} -dont_use_vias ".*_illegal"
 
 # VIN / GND
-define_pdn_grid -name stdcell_analog -pins m3 -starts_with POWER -voltage_domains TEMP_ANALOG
+define_pdn_grid -name stdcell_analog -pins m4 -starts_with POWER -voltage_domains TEMP_ANALOG
 
 add_pdn_stripe -grid stdcell_analog -layer m1 -width 0.044 -followpins
 add_pdn_stripe -grid stdcell_analog -layer m2 -width 0.044 -followpins
-add_pdn_ring -grid stdcell_analog -layer {m3 m4} -widths {0.044 0.044} -spacings {0.108 0.108} -core_offsets {0.108 0.108}
-add_pdn_stripe -grid stdcell_analog -layer m3 -width 0.044 -pitch 2.160 -offset 1 -snap_to_grid -extend_to_core_ring
+add_pdn_ring -grid stdcell_analog -layer {m3 m4} -widths {0.044 0.044} -spacings {0.066 0.066} -core_offsets {0.066 0.066}
+add_pdn_stripe -grid stdcell_analog -layer m3 -width 0.044 -pitch 1.08 -offset 0.810 -snap_to_grid -extend_to_core_ring
 
 add_pdn_connect -grid stdcell_analog -layers {m1 m2} -dont_use_vias ".*_illegal" -ongrid {m1}
 add_pdn_connect -grid stdcell_analog -layers {m2 m3} -dont_use_vias ".*_illegal" 
